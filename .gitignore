@@ -216,4 +216,8 @@ pip-log.txt
 .mr.developer.cfg
 =======
 /bin
+<<<<<<< HEAD
 >>>>>>> da63dc92d90de14bb6faa102334520603a6d627b
+=======
+>>>>>>> f81022f4f35c3f3e5b24200f824e426aab4745a4
+>>>>>>> df053a01413bea361f57db41be21f42888d64289
