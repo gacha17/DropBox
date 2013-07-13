@@ -38,6 +38,7 @@ public class ClientServiceThread extends Thread {
 		    FileManager manageFile = new FileManager();
 		   	   
 		    while ((msgFromClient = (Message) in.readObject()) != null) { 
+		    	System.out.println("delete meee...");
 		         System.out.println ("Message from client: " + msgFromClient.getEventOccured());
 		         manageFile.writeFile(msgFromClient.getFileData(),msgFromClient.getClientID()); 
 		         out.writeObject(msgFromClient);
