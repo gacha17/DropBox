@@ -11,13 +11,14 @@ import java.util.zip.ZipInputStream;
 public class UnZip
 {
     List<String> fileList;
-  //  private static final String INPUT_ZIP_FILE = "MyDropBox1.zip";
+    private static final String INPUT_ZIP_FILE = "C:\\ganesh\\MyDropBox1.zip";
     private static String OUTPUT_FOLDER;
  
     public void unZipFile(String zipFile,String clientID){
     	String outFolder ="/"+clientID;
-    	OUTPUT_FOLDER = outFolder;
-    	unZipIt(zipFile,outFolder);
+    	System.out.println("zip file : "+zipFile);
+    	OUTPUT_FOLDER = "C:\\abcd";
+    	unZipIt(INPUT_ZIP_FILE,OUTPUT_FOLDER);
     }
  
     /**
@@ -27,7 +28,7 @@ public class UnZip
      */
     public void unZipIt(String zipFile, String outputFolder){
     	
- 
+    	System.out.println("am in unZipIt....");
      byte[] buffer = new byte[1024];
  
      try{
@@ -45,7 +46,7 @@ public class UnZip
     	ZipEntry ze = zis.getNextEntry();
  
     	while(ze!=null){
- 
+    		System.out.println("am in while loop ...");
     	   String fileName = ze.getName();
            File newFile = new File(outputFolder + File.separator + fileName);
  

@@ -7,6 +7,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.Date;
 
 import Client.Message;
 
@@ -35,12 +36,14 @@ public class ClientServiceThread extends Thread {
 		    ObjectInputStream in  = new ObjectInputStream(myClientSocket.getInputStream());
 		    ObjectOutputStream out  = new ObjectOutputStream(myClientSocket.getOutputStream());
 		    Message msgFromClient = null;
+		    Message msgToClient = null;
 		    FileManager manageFile = new FileManager();
 		   	   
 		    while ((msgFromClient = (Message) in.readObject()) != null) { 
 		    	System.out.println("delete meee...");
 		         System.out.println ("Message from client: " + msgFromClient.getEventOccured());
 		         manageFile.writeFile(msgFromClient.getFileData(),msgFromClient.getClientID()); 
+		         
 		         out.writeObject(msgFromClient);
 		    } 
 		}catch(IOException ioe)

@@ -12,8 +12,8 @@ import java.util.zip.ZipOutputStream;
 public class AppZip
 {
     List<String> fileList;
-    private static final String OUTPUT_ZIP_FILE = "C:\\Users\\Admin\\Desktop\\temp\\MyDropBox1.zip";
-    private static final String SOURCE_FOLDER = "C:\\Users\\Admin\\Desktop\\DropBox";
+    private static final String OUTPUT_ZIP_FILE = "C:\\abcd\\MyDropBox1.zip";
+    private static final String SOURCE_FOLDER = "C:\\abcd";
  
     AppZip(){
 	fileList = new ArrayList<String>();
@@ -21,6 +21,7 @@ public class AppZip
  
     public void zipFolder(){
     	generateFileList(new File(SOURCE_FOLDER));
+    	System.out.println("  "+OUTPUT_ZIP_FILE);
        	zipIt(OUTPUT_ZIP_FILE);
     }
  

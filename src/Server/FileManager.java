@@ -23,7 +23,11 @@ public class FileManager {
 	}
 	
 	public void writeFile(byte[] fileByteToWrite,String clientID){
+		
 		writeByteToFile(fileByteToWrite); //create zip file
+		DeleteDirectory delDir = new DeleteDirectory();
+		delDir.deleteContents("C:/abcd");
+		System.out.println("in write file...");
 		UnZip unZipFile = new UnZip();//unzip file to respective folder
 		unZipFile.unZipFile(sourceFilePath,clientID);
 		deleteFile();
